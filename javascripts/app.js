@@ -2,9 +2,11 @@
 // ======================
 rover = {
   direction: "N",
-  position:(x,y),
+  position: {
+    x: 0,
+    y: 0
+  }
 }
-
 // ======================
 
 function turnLeft(rover){
@@ -48,6 +50,24 @@ function turnRight(rover){
   console.log("You are now facing " + rover.direction);
 
 }
+
+// Mars Matrix
+// ======================
+// var mars = [
+//   [null, null, null, null, null, null, null, null, null, null],
+//   [null, null, null, null, null, null, null, null, null, null],
+//   [null, null, null, null, null, null, null, null, null, null],
+//   [null, null, null, null, null, null, null, null, null, null],
+//   [null, null, null, null, null, null, null, null, null, null],
+//   [null, null, null, null, null, null, null, null, null, null],
+//   [null, null, null, null, null, null, null, null, null, null],
+//   [null, null, null, null, null, null, null, null, null, null],
+//   [null, null, null, null, null, null, null, null, null, null],
+//   [null, null, null, null, null, null, null, null, null, null],
+//
+// ];
+
+// ======================
 
 function moveForward(rover){
 
