@@ -92,7 +92,23 @@ function moveBackward(rover) {
 }
 
 // COMMANDS
-//
-// function commands() {
-//   var commands = 'rffrfflfrff';
-// }
+
+function commands() {
+  var commands = 'rffrfflfrff';
+
+  var arrayCommands = commands.split('');
+
+  for (var i = 0; i < arrayCommands.length; i++) {
+    if (arrayCommands[i] == 'f') {
+      moveForward(rover);
+    } else if (arrayCommands[i] == 'b') {
+      moveBackward(rover);
+    } else if (arrayCommands[i] == 'l') {
+      turnLeft(rover);
+    } else if (arrayCommands[i] == 'r') {
+      turnRight(rover);
+    }
+  }
+}
+
+commands();
