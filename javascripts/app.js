@@ -3,10 +3,11 @@ rover = {
   direction: 'N',
   x: 0,
   y: 0,
+  travelLog: [0, 0],
 };
 
 function currentPosition() {
-  var currentPosition = [rover.x, rover.y];
+  var position = [rover.x, rover.y];
   console.log(currentPosition);
 }
 
@@ -96,19 +97,25 @@ function moveBackward(rover) {
 function commands() {
   var commands = 'rffrfflfrff';
 
-  var arrayCommands = commands.split('');
+  var aCommand = commands.split('');
 
-  for (var i = 0; i < arrayCommands.length; i++) {
-    if (arrayCommands[i] == 'f') {
+  for (var i = 0; i < aCommand.length; i++) {
+    if (aCommand[i] === 'f') {
       moveForward(rover);
-    } else if (arrayCommands[i] == 'b') {
+    } else if (aCommand[i] === 'b') {
       moveBackward(rover);
-    } else if (arrayCommands[i] == 'l') {
+    } else if (aCommand[i] === 'l') {
       turnLeft(rover);
-    } else if (arrayCommands[i] == 'r') {
+    } else if (aCommand[i] === 'r') {
       turnRight(rover);
     }
   }
 }
 
 commands();
+
+// TRACKING
+
+// BOUNDARIES
+
+//MOVING BACKWARDS
