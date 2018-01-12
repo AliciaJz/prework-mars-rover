@@ -5,11 +5,11 @@ rover = {
   y: 0,
 };
 
-//
-// var currentPosition = rover.x + rover.y;
-// function currentPosition() {
-//     return rover.x + rover.y;
-// }
+function currentPosition() {
+  var currentPosition = [rover.x, rover.y];
+  console.log(currentPosition);
+}
+
 // Turn Left
 function turnLeft(rover) {
   switch (rover.direction) {
@@ -69,8 +69,7 @@ function moveForward(rover) {
 
   console.log('moveForward was called');
   console.log('You are still facing ' + rover.direction);
-  rover.position =
-    console.log('And your new position is: ' + '(' + rover.x + ',' + rover.y + ')');
+  console.log('And your new position is: ' + '(' + rover.x + ',' + rover.y + ')');
 }
 
 // Move Backward
@@ -93,6 +92,7 @@ function moveBackward(rover) {
 }
 
 // COMMANDS
-
-// function commands()
-// var commands = 'rffrfflfrff';
+//
+// function commands() {
+//   var commands = 'rffrfflfrff';
+// }
