@@ -76,7 +76,23 @@ else {
 
 // Move Backward
 function moveBackward(rover) {
+  if (rover.direction === "N") {
+    rover.y += 1;
+  }
+  else if (rover.direction === "W") {
+    rover.x += 1;
+  }
+  else if (rover.direction === "S") {
+    rover.y -= 1;
+  }
+  else if (rover.direction === "E") {
+    rover.x -= 1;
+  }
+  else {
+    console.log("The Rover is in the same place")
+  }
+
   console.log("moveBackward was called")
   console.log("You are still facing " + rover.direction);
-  console.log("And your new position is " + rover.position);
+  console.log("And your new position is: " + "(" + rover.x + "," + rover.y + ")");
 }
