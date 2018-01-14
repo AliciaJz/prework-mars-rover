@@ -1,15 +1,13 @@
 // Rover Object Goes Here
 rover = {
   direction: 'N',
-  x: 0,
-  y: 0,
-  travelLog: [0, 0],
+  position: {
+    x: 0,
+    y: 0,
+  },
 };
 
-function currentPosition() {
-  var position = [rover.x, rover.y];
-  console.log(currentPosition);
-}
+var travelLog = [rover.position];
 
 // Turn Left
 function turnLeft(rover) {
@@ -56,46 +54,52 @@ function turnRight(rover) {
 
 // Move Forward
 function moveForward(rover) {
-  if (rover.direction === 'N') {
-    rover.y -= 1;
-  } else if (rover.direction === 'W') {
-    rover.x -= 1;
-  } else if (rover.direction === 'S') {
-    rover.y += 1;
-  } else if (rover.direction === 'E') {
-    rover.x += 1;
-  } else {
-    console.log('The Rover is in the same place');
+  if (rover.direction === 'N' && rover.position.y <= 9) {
+    rover.position.y -= 1;
+    travelLog.push(rover.position);
+  } else if (rover.direction === 'W' && rover.position.x <= 9) {
+    rover.position.x -= 1;
+    travelLog.push(rover.position);
+  } else if (rover.direction === 'S' && rover.position.y <= 9) {
+    rover.position.y += 1;
+    travelLog.push(rover.position);
+  } else if (rover.direction === 'E' && rover.position.x <= 9) {
+    rover.position.x += 1;
+    travelLog.push(rover.position);
   }
 
   console.log('moveForward was called');
   console.log('You are still facing ' + rover.direction);
-  console.log('And your new position is: ' + '(' + rover.x + ',' + rover.y + ')');
+  console.log('And your new position is: ' + '(' + rover.position.x + ',' + rover.position.y + ')');
+
 }
 
 // Move Backward
 function moveBackward(rover) {
-  if (rover.direction === 'N') {
-    rover.y += 1;
-  } else if (rover.direction === 'W') {
-    rover.x += 1;
-  } else if (rover.direction === 'S') {
-    rover.y -= 1;
-  } else if (rover.direction === 'E') {
-    rover.x -= 1;
-  } else {
-    console.log('The Rover is in the same place');
+  if (rover.direction === 'N' && rover.position.y <= 9) {
+    rover.position.y += 1;
+    travelLog.push(rover.position);
+  } else if (rover.direction === 'W' && rover.position.x <= 9) {
+    rover.position.x += 1;
+    travelLog.push(rover.position);
+  } else if (rover.direction === 'S' && rover.position.y <= 9) {
+    rover.position.y -= 1;
+    travelLog.push(rover.position);
+  } else if (rover.direction === 'E' && rover.position.x <= 9) {
+    rover.position.x -= 1;
+    travelLog.push(rover.position);
   }
 
   console.log('moveBackward was called');
   console.log('You are still facing ' + rover.direction);
-  console.log('And your new position is: ' + '(' + rover.x + ',' + rover.y + ')');
+  console.log('And your new position is: ' + '(' + rover.position.x + ',' + rover.position.y + ')');
+
 }
 
 // COMMANDS
 
 function commands() {
-  var commands = 'rffrfflfrff';
+  var commands = 'rffrff';
 
   var aCommand = commands.split('');
 
@@ -113,9 +117,3 @@ function commands() {
 }
 
 commands();
-
-// TRACKING
-
-// BOUNDARIES
-
-//MOVING BACKWARDS
